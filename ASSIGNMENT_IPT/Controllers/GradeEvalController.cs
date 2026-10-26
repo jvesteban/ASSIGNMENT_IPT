@@ -4,14 +4,12 @@ namespace ASSIGNMENT_IPT.Controllers
 {
     public class GradeEvalController : Controller
     {
-        // Shows the empty form
         [HttpGet]
         public IActionResult GradeEval()
         {
             return View();
         }
 
-        // Runs when the user clicks Evaluate Grade
         [HttpPost]
         public IActionResult GradeEval(double? grade)
         {
@@ -19,7 +17,7 @@ namespace ASSIGNMENT_IPT.Controllers
 
             if (grade == null)
             {
-                ViewBag.Error = "Please enter your numeric grade.";
+                ViewBag.Error = "Please enter a grade.";
                 return View();
             }
 
@@ -53,7 +51,6 @@ namespace ASSIGNMENT_IPT.Controllers
             }
 
             ViewBag.Remarks = remarks;
-            ViewBag.Passed = grade >= 75;
             return View();
         }
     }

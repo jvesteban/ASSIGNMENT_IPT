@@ -4,14 +4,12 @@ namespace ASSIGNMENT_IPT.Controllers
 {
     public class AddNumbersController : Controller
     {
-        // Shows the empty form
         [HttpGet]
         public IActionResult AddNumbers()
         {
             return View();
         }
 
-        // Runs when the user clicks the Add button
         [HttpPost]
         public IActionResult AddNumbers(double? firstNumber, double? secondNumber)
         {
@@ -25,7 +23,6 @@ namespace ASSIGNMENT_IPT.Controllers
             }
 
             double sum = firstNumber.Value + secondNumber.Value;
-            ViewBag.Sum = sum;
             ViewBag.Result = firstNumber + " + " + secondNumber + " = " + sum;
             return View();
         }

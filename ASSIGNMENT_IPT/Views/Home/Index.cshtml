@@ -1,81 +1,67 @@
 @{
-    ViewData["Title"] = "Home";
+    ViewData["Title"] = "Home Page";
 }
 
-<section class="hero-banner mb-4">
-    <div class="hero-badge">
-        <span>IPT &bull; Integrative Programming &amp; Technologies</span>
-    </div>
-    <h1 class="display-6 fw-bold mb-2">Programming Exercises &amp; Laboratory</h1>
-    <p class="hero-subtitle mb-0">
-        A collection of C# and ASP.NET Core MVC web applications demonstrating fundamental programming concepts:
-        handling user input, conditional logic, and loop structures.
+<div class="header-banner">
+    <h2 class="h4 fw-bold mb-1">Integrative Programming and Technologies</h2>
+    <p class="text-muted mb-0">
+        Compilation of our laboratory exercises and activities in ASP.NET Core MVC.
     </p>
-</section>
-
-<div class="d-flex justify-content-between align-items-center mb-3">
-    <h2 class="h5 fw-bold mb-0">Course Modules</h2>
-    <span class="text-muted small">Select a topic to view exercises</span>
 </div>
 
-<div class="row g-4">
-    <div class="col-lg-4">
-        <div class="card topic-card topic-card-interactive h-100">
-            <div class="card-body p-4 d-flex flex-column">
-                <div class="d-flex justify-content-between align-items-start mb-3">
-                    <div class="icon-box">I/O</div>
-                    <span class="step-badge">4 Activities</span>
-                </div>
-                <h3 class="h5 fw-bold mb-2">Basic Input Output</h3>
-                <p class="text-muted small mb-3">
-                    Capture user data from web forms, process values in the controller, and display formatted results.
-                </p>
-                <div class="d-flex flex-wrap gap-1 mb-4">
-                    <span class="mini-tag">Display Name</span>
-                    <span class="mini-tag">Add Numbers</span>
-                    <span class="mini-tag">Age Calculator</span>
-                    <span class="mini-tag">Grade Evaluator</span>
-                </div>
-                <a class="btn btn-primary w-100 mt-auto" asp-controller="BasicInputOutput" asp-action="BasicInputOutput">
-                    Open Module &rarr;
+<div class="row g-3">
+    <div class="col-md-4">
+        <div class="app-card app-card-hover h-100 d-flex flex-column">
+            <div class="d-flex align-items-center gap-2 mb-2">
+                <span class="card-number">01</span>
+                <h5 class="fw-bold mb-0">Basic Input Output</h5>
+            </div>
+            <p class="text-muted small mb-3">
+                Programs that read user input from a form, process the data in the controller, and show the result.
+            </p>
+            <div class="list-group list-group-flush small mb-3 border-top border-bottom">
+                <a asp-controller="DisplayName" asp-action="DisplayName" class="list-group-item list-group-item-action px-1 py-2">
+                    1. Display Name
+                </a>
+                <a asp-controller="AddNumbers" asp-action="AddNumbers" class="list-group-item list-group-item-action px-1 py-2">
+                    2. Add Numbers
+                </a>
+                <a asp-controller="AgeCalculator" asp-action="AgeCalculator" class="list-group-item list-group-item-action px-1 py-2">
+                    3. Age Calculator
+                </a>
+                <a asp-controller="GradeEval" asp-action="GradeEval" class="list-group-item list-group-item-action px-1 py-2">
+                    4. Grade Evaluator
                 </a>
             </div>
+            <a asp-controller="BasicInputOutput" asp-action="BasicInputOutput" class="btn btn-accent btn-sm mt-auto">
+                Open Basic Input Output &rarr;
+            </a>
         </div>
     </div>
 
-    <div class="col-lg-4">
-        <div class="card topic-card h-100">
-            <div class="card-body p-4 d-flex flex-column">
-                <div class="d-flex justify-content-between align-items-start mb-3">
-                    <div class="icon-box icon-box-muted">IF</div>
-                    <span class="badge text-bg-light border text-secondary">Module 2</span>
-                </div>
-                <h3 class="h5 fw-bold mb-2">Conditional Statement</h3>
-                <p class="text-muted small mb-3">
-                    Control program flow and decision-making using <code>if</code>, <code>else if</code>, <code>else</code>, and <code>switch</code> statements.
-                </p>
-                <div class="mt-auto pt-2">
-                    <button class="btn btn-light-bordered w-100" disabled>Coming Soon</button>
-                </div>
+    <div class="col-md-4">
+        <div class="app-card h-100 d-flex flex-column">
+            <div class="d-flex align-items-center gap-2 mb-2">
+                <span class="card-number">02</span>
+                <h5 class="fw-bold mb-0">Conditional Statement</h5>
             </div>
+            <p class="text-muted small mb-3">
+                Decision-making programs using <code>if</code>, <code>else if</code>, <code>else</code>, and <code>switch</code> statements.
+            </p>
+            <span class="text-muted small mt-auto">No activities added yet</span>
         </div>
     </div>
 
-    <div class="col-lg-4">
-        <div class="card topic-card h-100">
-            <div class="card-body p-4 d-flex flex-column">
-                <div class="d-flex justify-content-between align-items-start mb-3">
-                    <div class="icon-box icon-box-muted">&infin;</div>
-                    <span class="badge text-bg-light border text-secondary">Module 3</span>
-                </div>
-                <h3 class="h5 fw-bold mb-2">Repitition Statement</h3>
-                <p class="text-muted small mb-3">
-                    Automate repetitive tasks and iterate through sequences using <code>for</code>, <code>while</code>, and <code>do-while</code> loops.
-                </p>
-                <div class="mt-auto pt-2">
-                    <button class="btn btn-light-bordered w-100" disabled>Coming Soon</button>
-                </div>
+    <div class="col-md-4">
+        <div class="app-card h-100 d-flex flex-column">
+            <div class="d-flex align-items-center gap-2 mb-2">
+                <span class="card-number">03</span>
+                <h5 class="fw-bold mb-0">Repitition Statement</h5>
             </div>
+            <p class="text-muted small mb-3">
+                Looping programs using <code>for</code>, <code>while</code>, and <code>do-while</code> statements.
+            </p>
+            <span class="text-muted small mt-auto">No activities added yet</span>
         </div>
     </div>
 </div>

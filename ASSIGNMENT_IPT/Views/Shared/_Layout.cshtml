@@ -6,28 +6,25 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - IPT Assignment</title>
+    <title>@ViewData["Title"] - ASSIGNMENT_IPT</title>
     <script type="importmap"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/ASSIGNMENT_IPT.styles.css" asp-append-version="true" />
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-md navbar-light bg-white border-bottom sticky-top custom-navbar">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark top-navbar mb-4">
             <div class="container">
-                <a class="navbar-brand d-flex align-items-center gap-2 fw-bold" asp-area="" asp-controller="Home" asp-action="Index">
-                    <span class="brand-badge">IPT</span>
-                    <span>Assignment</span>
+                <a class="navbar-brand d-flex align-items-center gap-2" asp-area="" asp-controller="Home" asp-action="Index">
+                    <span class="brand-dot"></span>
+                    <span>ASSIGNMENT_IPT</span>
                 </a>
-                <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="navbar-collapse collapse d-md-inline-flex justify-content-end">
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-end">
                     <ul class="navbar-nav gap-1">
                         @if (IsSectionDefined("navitems"))
                         {
@@ -37,19 +34,13 @@
                         {
                             <li class="nav-item">
                                 <a class="nav-link @(currentController == "BasicInputOutput" ? "active" : "")"
-                                   asp-area="" asp-controller="BasicInputOutput" asp-action="BasicInputOutput">
-                                    Basic Input Output
-                                </a>
+                                   asp-area="" asp-controller="BasicInputOutput" asp-action="BasicInputOutput">Basic Input Output</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">
-                                    Conditional Statement
-                                </a>
+                                <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Conditional Statement</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">
-                                    Repitition Statement
-                                </a>
+                                <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Repitition Statement</a>
                             </li>
                         }
                     </ul>
@@ -58,16 +49,16 @@
         </nav>
     </header>
 
-    <div class="container py-4">
+    <div class="container">
         <main role="main" class="pb-4">
             @RenderBody()
         </main>
     </div>
 
-    <footer class="footer border-top bg-white text-muted">
-        <div class="container d-flex flex-wrap justify-content-between align-items-center">
-            <span>&copy; 2026 &mdash; IPT Assignment</span>
-            <span class="small">Integrative Programming &amp; Technologies (ASP.NET Core MVC)</span>
+    <footer class="border-top footer text-muted">
+        <div class="container d-flex justify-content-between align-items-center">
+            <span>&copy; 2026 &mdash; ASSIGNMENT_IPT</span>
+            <span class="small">ASP.NET Core MVC</span>
         </div>
     </footer>
 

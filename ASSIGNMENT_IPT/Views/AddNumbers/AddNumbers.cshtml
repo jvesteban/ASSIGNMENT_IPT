@@ -6,76 +6,47 @@
     <partial name="_BasicIONav" />
 }
 
-<div class="page-header">
-    <div class="breadcrumb-custom">
-        <a asp-controller="BasicInputOutput" asp-action="BasicInputOutput">Basic Input Output</a>
-        <span>/</span>
-        <span>Add Numbers</span>
-    </div>
-    <div class="d-flex flex-wrap justify-content-between align-items-center gap-2">
-        <div>
-            <h1 class="h3 fw-bold mb-1">Add Numbers</h1>
-            <p class="text-muted mb-0">Enter two numbers below to compute their sum.</p>
-        </div>
-        <span class="step-badge">Activity 02</span>
-    </div>
-</div>
+<div class="row">
+    <div class="col-lg-6 mx-auto">
+        <div class="app-card">
+            <div class="d-flex align-items-center gap-2 mb-1">
+                <span class="card-number">02</span>
+                <h3 class="h4 fw-bold mb-0">Add Numbers</h3>
+            </div>
+            <p class="text-muted small mb-4">Enter two numbers below to compute their sum.</p>
 
-<div class="row g-4">
-    <div class="col-lg-6">
-        <div class="card topic-card h-100">
-            <div class="card-body p-4">
-                <h2 class="h6 fw-bold text-uppercase text-muted mb-3">Input Numbers</h2>
-
-                <form method="post">
-                    <div class="mb-3">
+            <form method="post">
+                <div class="row g-3 mb-3">
+                    <div class="col-sm-6">
                         <label for="firstNumber" class="form-label">First Number</label>
                         <input type="number" step="any" id="firstNumber" name="firstNumber" class="form-control"
-                               placeholder="e.g. 25" value="@ViewBag.FirstNumber" />
+                               placeholder="0" value="@ViewBag.FirstNumber" autofocus />
                     </div>
-                    <div class="mb-4">
+                    <div class="col-sm-6">
                         <label for="secondNumber" class="form-label">Second Number</label>
                         <input type="number" step="any" id="secondNumber" name="secondNumber" class="form-control"
-                               placeholder="e.g. 15" value="@ViewBag.SecondNumber" />
+                               placeholder="0" value="@ViewBag.SecondNumber" />
                     </div>
+                </div>
 
-                    <div class="d-flex gap-2">
-                        <button type="submit" class="btn btn-primary">Calculate Sum</button>
-                        <a asp-action="AddNumbers" class="btn btn-light-bordered">Reset</a>
-                    </div>
-                </form>
+                <div class="d-flex gap-2">
+                    <button type="submit" class="btn btn-accent">Add Numbers</button>
+                    <a asp-action="AddNumbers" class="btn-reset">Clear</a>
+                </div>
+            </form>
 
-                @if (ViewBag.Error != null)
-                {
-                    <div class="error-banner mt-3">
-                        @ViewBag.Error
-                    </div>
-                }
-            </div>
-        </div>
-    </div>
-
-    <div class="col-lg-6">
-        <div class="output-panel p-4">
-            <h2 class="h6 fw-bold text-uppercase text-muted mb-3">Calculation Result</h2>
+            @if (ViewBag.Error != null)
+            {
+                <div class="alert alert-danger mt-3 mb-0">
+                    @ViewBag.Error
+                </div>
+            }
 
             @if (ViewBag.Result != null)
             {
-                <div class="result-highlight mb-3">
-                    <div class="small text-uppercase fw-bold mb-1 opacity-75">Total Sum</div>
-                    <div class="display-6 fw-bold">@ViewBag.Sum</div>
-                </div>
-
-                <div class="stat-tile mt-auto">
-                    <div class="stat-tile-label">Complete Equation</div>
-                    <div class="stat-tile-value">@ViewBag.Result</div>
-                </div>
-            }
-            else
-            {
-                <div class="output-empty my-auto">
-                    <div class="fw-semibold text-dark mb-1">Waiting for numbers</div>
-                    <p class="small mb-0">Enter two whole or decimal numbers on the left and click <strong>Calculate Sum</strong>.</p>
+                <div class="output-card">
+                    <div class="output-label">Sum Result</div>
+                    <div class="output-value">@ViewBag.Result</div>
                 </div>
             }
         </div>

@@ -6,84 +6,40 @@
     <partial name="_BasicIONav" />
 }
 
-<div class="page-header">
-    <div class="breadcrumb-custom">
-        <a asp-controller="BasicInputOutput" asp-action="BasicInputOutput">Basic Input Output</a>
-        <span>/</span>
-        <span>Age Calculator</span>
-    </div>
-    <div class="d-flex flex-wrap justify-content-between align-items-center gap-2">
-        <div>
-            <h1 class="h3 fw-bold mb-1">Age Calculator</h1>
-            <p class="text-muted mb-0">Select your date of birth to compute your current age as of today.</p>
-        </div>
-        <span class="step-badge">Activity 03</span>
-    </div>
-</div>
-
-<div class="row g-4">
-    <div class="col-lg-6">
-        <div class="card topic-card h-100">
-            <div class="card-body p-4">
-                <h2 class="h6 fw-bold text-uppercase text-muted mb-3">Date Input</h2>
-
-                <form method="post">
-                    <div class="mb-4">
-                        <label for="birthDate" class="form-label">Date of Birth</label>
-                        <input type="date" id="birthDate" name="birthDate" class="form-control"
-                               max="@DateTime.Today.ToString("yyyy-MM-dd")" value="@ViewBag.BirthDate" />
-                        <div class="form-text mt-2">
-                            The calculator automatically checks if your birthday has already passed this year.
-                        </div>
-                    </div>
-
-                    <div class="d-flex gap-2">
-                        <button type="submit" class="btn btn-primary">Calculate Age</button>
-                        <a asp-action="AgeCalculator" class="btn btn-light-bordered">Reset</a>
-                    </div>
-                </form>
-
-                @if (ViewBag.Error != null)
-                {
-                    <div class="error-banner mt-3">
-                        @ViewBag.Error
-                    </div>
-                }
+<div class="row">
+    <div class="col-lg-6 mx-auto">
+        <div class="app-card">
+            <div class="d-flex align-items-center gap-2 mb-1">
+                <span class="card-number">03</span>
+                <h3 class="h4 fw-bold mb-0">Age Calculator</h3>
             </div>
-        </div>
-    </div>
+            <p class="text-muted small mb-4">Select your birthdate below to calculate your current age.</p>
 
-    <div class="col-lg-6">
-        <div class="output-panel p-4">
-            <h2 class="h6 fw-bold text-uppercase text-muted mb-3">Calculated Age</h2>
+            <form method="post">
+                <div class="mb-3">
+                    <label for="birthDate" class="form-label">Birthdate</label>
+                    <input type="date" id="birthDate" name="birthDate" class="form-control"
+                           max="@DateTime.Today.ToString("yyyy-MM-dd")" value="@ViewBag.BirthDate" autofocus />
+                </div>
+
+                <div class="d-flex gap-2">
+                    <button type="submit" class="btn btn-accent">Calculate Age</button>
+                    <a asp-action="AgeCalculator" class="btn-reset">Clear</a>
+                </div>
+            </form>
+
+            @if (ViewBag.Error != null)
+            {
+                <div class="alert alert-danger mt-3 mb-0">
+                    @ViewBag.Error
+                </div>
+            }
 
             @if (ViewBag.Result != null)
             {
-                <div class="result-highlight mb-3">
-                    <div class="small text-uppercase fw-bold mb-1 opacity-75">Current Age</div>
-                    <div class="display-6 fw-bold">@ViewBag.Age <span class="fs-5 fw-semibold">years old</span></div>
-                </div>
-
-                <div class="row g-3 mt-auto">
-                    <div class="col-sm-6">
-                        <div class="stat-tile">
-                            <div class="stat-tile-label">Birthdate</div>
-                            <div class="stat-tile-value fs-6">@ViewBag.FormattedBirthDate</div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6">
-                        <div class="stat-tile">
-                            <div class="stat-tile-label">Day of the Week</div>
-                            <div class="stat-tile-value fs-6">@ViewBag.DayBorn</div>
-                        </div>
-                    </div>
-                </div>
-            }
-            else
-            {
-                <div class="output-empty my-auto">
-                    <div class="fw-semibold text-dark mb-1">No birthdate selected</div>
-                    <p class="small mb-0">Pick your date of birth on the left and click <strong>Calculate Age</strong>.</p>
+                <div class="output-card">
+                    <div class="output-label">Calculated Age</div>
+                    <div class="output-value">@ViewBag.Result</div>
                 </div>
             }
         </div>
