@@ -1,0 +1,72 @@
+@{
+    ViewData["Title"] = "Conditional Statement";
+}
+
+<div class="header-banner">
+    <h1 class="h3 fw-bold mb-2">Conditional Statement</h1>
+    <p class="mb-0">
+        These five examples use <code>if</code>, <code>else if</code>, <code>else</code>, nested <code>if</code>, and <code>switch</code> to make decisions. Click any example to try it out.
+    </p>
+</div>
+
+<div class="row g-4">
+    <div class="col-md-6">
+        <div class="app-card app-card-hover h-100 d-flex flex-column">
+            <h5 class="fw-bold mb-2">Odd or Even</h5>
+            <p class="text-muted small mb-4">
+                Enter a whole number and the program tells you if it is odd or even. Uses <code>if</code> and <code>else</code>.
+            </p>
+            <a asp-controller="OddEven" asp-action="OddEven" class="btn btn-accent mt-auto align-self-start">
+                Open Odd or Even
+            </a>
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <div class="app-card app-card-hover h-100 d-flex flex-column">
+            <h5 class="fw-bold mb-2">Sign Checker</h5>
+            <p class="text-muted small mb-4">
+                Check if a number is positive, negative, or zero. Uses <code>if</code>, <code>else if</code>, and <code>else</code>.
+            </p>
+            <a asp-controller="SignChecker" asp-action="SignChecker" class="btn btn-accent mt-auto align-self-start">
+                Open Sign Checker
+            </a>
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <div class="app-card app-card-hover h-100 d-flex flex-column">
+            <h5 class="fw-bold mb-2">Voting Eligibility</h5>
+            <p class="text-muted small mb-4">
+                Enter your age to find out if you are old enough to vote (18 and above).
+            </p>
+            <a asp-controller="VotingEligibility" asp-action="VotingEligibility" class="btn btn-accent mt-auto align-self-start">
+                Open Voting Eligibility
+            </a>
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <div class="app-card app-card-hover h-100 d-flex flex-column">
+            <h5 class="fw-bold mb-2">Largest Number</h5>
+            <p class="text-muted small mb-4">
+                Enter three numbers and find the largest one. Uses a nested <code>if</code> statement.
+            </p>
+            <a asp-controller="LargestNumber" asp-action="LargestNumber" class="btn btn-accent mt-auto align-self-start">
+                Open Largest Number
+            </a>
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <div class="app-card app-card-hover h-100 d-flex flex-column">
+            <h5 class="fw-bold mb-2">Day Name</h5>
+            <p class="text-muted small mb-4">
+                Enter a number from 1 to 7 and get the name of the day. Uses a <code>switch</code> statement.
+            </p>
+            <a asp-controller="DayName" asp-action="DayName" class="btn btn-accent mt-auto align-self-start">
+                Open Day Name
+            </a>
+        </div>
+    </div>
+</div>

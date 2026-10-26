@@ -1,0 +1,44 @@
+@{
+    ViewData["Title"] = "Odd or Even";
+}
+
+<div class="row">
+    <div class="col-lg-6 mx-auto">
+        <a asp-controller="ConditionalStatement" asp-action="ConditionalStatement" class="btn-back">&larr; Back</a>
+
+        <div class="app-card">
+            <h3 class="h4 fw-bold mb-1">Odd or Even</h3>
+            <p class="text-muted small mb-0">Enter a whole number to check if it is odd or even.</p>
+
+            <hr class="my-3 text-muted opacity-25" />
+
+            <form method="post">
+                <div class="mb-4">
+                    <label for="number" class="form-label">Number</label>
+                    <input type="number" step="1" id="number" name="number" class="form-control"
+                           placeholder="e.g. 7" value="@ViewBag.Number" autofocus />
+                </div>
+
+                <div class="d-flex gap-2">
+                    <button type="submit" class="btn btn-accent">Check Number</button>
+                    <a asp-action="OddEven" class="btn-reset">Clear</a>
+                </div>
+            </form>
+
+            @if (ViewBag.Error != null)
+            {
+                <div class="alert alert-danger mt-3 mb-0">
+                    @ViewBag.Error
+                </div>
+            }
+
+            @if (ViewBag.Result != null)
+            {
+                <div class="output-card">
+                    <div class="output-label">Result</div>
+                    <div class="output-value">@ViewBag.Result</div>
+                </div>
+            }
+        </div>
+    </div>
+</div>

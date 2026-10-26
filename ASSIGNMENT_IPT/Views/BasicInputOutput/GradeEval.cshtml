@@ -1,5 +1,79 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
 @{
+    ViewData["Title"] = "Grade Evaluator";
+    bool isFailed = ViewBag.Remarks == "Failed";
 }
+
+<div class="row">
+    <div class="col-lg-6 mx-auto">
+        <a asp-controller="BasicInputOutput" asp-action="BasicInputOutput" class="btn-back">&larr; Back</a>
+
+        <div class="app-card">
+            <h3 class="h4 fw-bold mb-1">Grade Evaluator</h3>
+            <p class="text-muted small mb-0">Enter a grade from 0 to 100 to check your remarks.</p>
+
+            <hr class="my-3 text-muted opacity-25" />
+
+            <form method="post">
+                <div class="mb-4">
+                    <label for="grade" class="form-label">Grade (0 - 100)</label>
+                    <input type="number" step="any" min="0" max="100" id="grade" name="grade"
+                           class="form-control" placeholder="e.g. 88" value="@ViewBag.Grade" autofocus />
+                </div>
+
+                <div class="d-flex gap-2">
+                    <button type="submit" class="btn btn-accent">Evaluate</button>
+                    <a asp-action="GradeEval" class="btn-reset">Clear</a>
+                </div>
+            </form>
+
+            @if (ViewBag.Error != null)
+            {
+                <div class="alert alert-danger mt-3 mb-0">
+                    @ViewBag.Error
+                </div>
+            }
+
+            @if (ViewBag.Remarks != null)
+            {
+                <div class="output-card @(isFailed ? "output-card-danger" : "")">
+                    <div class="output-label">Result</div>
+                    <div class="output-value">Grade: @ViewBag.Grade &mdash; @ViewBag.Remarks</div>
+                </div>
+            }
+
+            <div class="mt-4 pt-3 border-top">
+                <p class="small fw-bold text-muted mb-2">Grading Scale:</p>
+                <table class="table table-sm table-bordered small mb-0">
+                    <thead class="table-light">
+                        <tr>
+                            <th>Grade Range</th>
+                            <th>Remarks</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="@(ViewBag.Remarks == "Excellent" ? "table-primary fw-bold" : "")">
+                            <td>90 - 100</td>
+                            <td>Excellent</td>
+                        </tr>
+                        <tr class="@(ViewBag.Remarks == "Very Good" ? "table-primary fw-bold" : "")">
+                            <td>85 - 89</td>
+                            <td>Very Good</td>
+                        </tr>
+                        <tr class="@(ViewBag.Remarks == "Good" ? "table-primary fw-bold" : "")">
+                            <td>80 - 84</td>
+                            <td>Good</td>
+                        </tr>
+                        <tr class="@(ViewBag.Remarks == "Passed" ? "table-primary fw-bold" : "")">
+                            <td>75 - 79</td>
+                            <td>Passed</td>
+                        </tr>
+                        <tr class="@(ViewBag.Remarks == "Failed" ? "table-danger fw-bold" : "")">
+                            <td>Below 75</td>
+                            <td>Failed</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

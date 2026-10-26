@@ -2,74 +2,70 @@
     ViewData["Title"] = "Basic Input Output";
 }
 
-@section navitems {
-    <partial name="_BasicIONav" />
-}
-
 <div class="header-banner">
-    <h2 class="h4 fw-bold mb-1">Basic Input Output</h2>
-    <p class="text-muted mb-0">
-        Choose one of the 4 activities below to test the form input and output.
+    <h1 class="h3 fw-bold mb-2">Basic Input Output</h1>
+    <p class="mb-0">
+        Here are the five activities for Basic Input Output. Click any activity below to try it out.
     </p>
 </div>
 
-<div class="row g-3">
+<div class="row g-4">
     <div class="col-md-6">
         <div class="app-card app-card-hover h-100 d-flex flex-column">
-            <div class="d-flex align-items-center gap-2 mb-2">
-                <span class="card-number">01</span>
-                <h5 class="fw-bold mb-0">Display Name</h5>
-            </div>
-            <p class="text-muted small mb-3">
-                Type your first name and last name to display a greeting message on the page.
+            <h5 class="fw-bold mb-2">Display Name</h5>
+            <p class="text-muted small mb-4">
+                Type your first name and last name and the program will greet you with your full name.
             </p>
-            <a asp-controller="DisplayName" asp-action="DisplayName" class="btn btn-accent btn-sm mt-auto align-self-start">
-                Open Display Name &rarr;
+            <a asp-controller="DisplayName" asp-action="DisplayName" class="btn btn-accent mt-auto align-self-start">
+                Open Display Name
             </a>
         </div>
     </div>
 
     <div class="col-md-6">
         <div class="app-card app-card-hover h-100 d-flex flex-column">
-            <div class="d-flex align-items-center gap-2 mb-2">
-                <span class="card-number">02</span>
-                <h5 class="fw-bold mb-0">Add Numbers</h5>
-            </div>
-            <p class="text-muted small mb-3">
-                Enter two numbers (whole numbers or decimals) and compute their sum.
+            <h5 class="fw-bold mb-2">Add Numbers</h5>
+            <p class="text-muted small mb-4">
+                Enter two numbers and the program will add them together and show the sum.
             </p>
-            <a asp-controller="AddNumbers" asp-action="AddNumbers" class="btn btn-accent btn-sm mt-auto align-self-start">
-                Open Add Numbers &rarr;
+            <a asp-controller="AddNumbers" asp-action="AddNumbers" class="btn btn-accent mt-auto align-self-start">
+                Open Add Numbers
             </a>
         </div>
     </div>
 
     <div class="col-md-6">
         <div class="app-card app-card-hover h-100 d-flex flex-column">
-            <div class="d-flex align-items-center gap-2 mb-2">
-                <span class="card-number">03</span>
-                <h5 class="fw-bold mb-0">Age Calculator</h5>
-            </div>
-            <p class="text-muted small mb-3">
-                Select your birthdate from the calendar picker to calculate your current age.
+            <h5 class="fw-bold mb-2">Age Calculator</h5>
+            <p class="text-muted small mb-4">
+                Pick your birthdate from the calendar to see how old you are today.
             </p>
-            <a asp-controller="AgeCalculator" asp-action="AgeCalculator" class="btn btn-accent btn-sm mt-auto align-self-start">
-                Open Age Calculator &rarr;
+            <a asp-controller="AgeCalculator" asp-action="AgeCalculator" class="btn btn-accent mt-auto align-self-start">
+                Open Age Calculator
             </a>
         </div>
     </div>
 
     <div class="col-md-6">
         <div class="app-card app-card-hover h-100 d-flex flex-column">
-            <div class="d-flex align-items-center gap-2 mb-2">
-                <span class="card-number">04</span>
-                <h5 class="fw-bold mb-0">Grade Evaluator</h5>
-            </div>
-            <p class="text-muted small mb-3">
-                Enter a student grade from 0 to 100 to view the corresponding remarks.
+            <h5 class="fw-bold mb-2">Grade Evaluator</h5>
+            <p class="text-muted small mb-4">
+                Enter a grade from 0 to 100 to see if you passed and check your remarks.
             </p>
-            <a asp-controller="GradeEval" asp-action="GradeEval" class="btn btn-accent btn-sm mt-auto align-self-start">
-                Open Grade Evaluator &rarr;
+            <a asp-controller="GradeEval" asp-action="GradeEval" class="btn btn-accent mt-auto align-self-start">
+                Open Grade Evaluator
+            </a>
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <div class="app-card app-card-hover h-100 d-flex flex-column">
+            <h5 class="fw-bold mb-2">Temperature Converter</h5>
+            <p class="text-muted small mb-4">
+                Enter a temperature in Celsius and convert it into Fahrenheit.
+            </p>
+            <a asp-controller="TemperatureConverter" asp-action="TemperatureConverter" class="btn btn-accent mt-auto align-self-start">
+                Open Temperature Converter
             </a>
         </div>
     </div>

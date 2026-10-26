@@ -1,0 +1,45 @@
+@{
+    ViewData["Title"] = "Multiplication Table";
+    var lines = ViewBag.Lines as List<string>;
+}
+
+<div class="row">
+    <div class="col-lg-6 mx-auto">
+        <a asp-controller="RepititionStatement" asp-action="RepititionStatement" class="btn-back">&larr; Back</a>
+
+        <div class="app-card">
+            <h3 class="h4 fw-bold mb-1">Multiplication Table</h3>
+            <p class="text-muted small mb-0">Enter a number to see its multiplication table from 1 to 10.</p>
+
+            <hr class="my-3 text-muted opacity-25" />
+
+            <form method="post">
+                <div class="mb-4">
+                    <label for="number" class="form-label">Number</label>
+                    <input type="number" step="1" id="number" name="number" class="form-control"
+                           placeholder="e.g. 7" value="@ViewBag.Number" autofocus />
+                </div>
+
+                <div class="d-flex gap-2">
+                    <button type="submit" class="btn btn-accent">Show Table</button>
+                    <a asp-action="MultiplicationTable" class="btn-reset">Clear</a>
+                </div>
+            </form>
+
+            @if (ViewBag.Error != null)
+            {
+                <div class="alert alert-danger mt-3 mb-0">
+                    @ViewBag.Error
+                </div>
+            }
+
+            @if (lines != null)
+            {
+                <div class="output-card">
+                    <div class="output-label">@ViewBag.Title2</div>
+                    <pre class="loop-output">@string.Join("\n", lines)</pre>
+                </div>
+            }
+        </div>
+    </div>
+</div>

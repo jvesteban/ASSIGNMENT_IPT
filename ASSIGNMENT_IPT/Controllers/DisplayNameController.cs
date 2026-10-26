@@ -4,10 +4,13 @@ namespace ASSIGNMENT_IPT.Controllers
 {
     public class DisplayNameController : Controller
     {
+        // the view lives inside the Views/BasicInputOutput folder
+        private const string ViewPath = "~/Views/BasicInputOutput/DisplayName.cshtml";
+
         [HttpGet]
         public IActionResult DisplayName()
         {
-            return View();
+            return View(ViewPath);
         }
 
         [HttpPost]
@@ -19,11 +22,11 @@ namespace ASSIGNMENT_IPT.Controllers
             if (string.IsNullOrWhiteSpace(firstName) || string.IsNullOrWhiteSpace(lastName))
             {
                 ViewBag.Error = "Please enter both your first name and last name.";
-                return View();
+                return View(ViewPath);
             }
 
             ViewBag.Result = "Hello, " + firstName.Trim() + " " + lastName.Trim() + "!";
-            return View();
+            return View(ViewPath);
         }
     }
 }

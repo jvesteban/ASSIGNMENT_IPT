@@ -3,65 +3,112 @@
 }
 
 <div class="header-banner">
-    <h2 class="h4 fw-bold mb-1">Integrative Programming and Technologies</h2>
-    <p class="text-muted mb-0">
-        Compilation of our laboratory exercises and activities in ASP.NET Core MVC.
+    <h1 class="h3 fw-bold mb-2">ASSIGNMENT SA IPT</h1>
+    <p class="mb-0">
+        Welcome to my IPT assignment project. Choose a topic below to try out the programs we made in ASP.NET Core MVC.
     </p>
 </div>
 
-<div class="row g-3">
-    <div class="col-md-4">
+<div class="row g-4">
+    <div class="col-lg-4">
         <div class="app-card app-card-hover h-100 d-flex flex-column">
-            <div class="d-flex align-items-center gap-2 mb-2">
-                <span class="card-number">01</span>
-                <h5 class="fw-bold mb-0">Basic Input Output</h5>
-            </div>
+            <h5 class="fw-bold mb-2">Basic Input Output</h5>
             <p class="text-muted small mb-3">
-                Programs that read user input from a form, process the data in the controller, and show the result.
+                Simple programs where you enter your name, numbers, birthdate, grade, or temperature and the page shows the result.
             </p>
-            <div class="list-group list-group-flush small mb-3 border-top border-bottom">
-                <a asp-controller="DisplayName" asp-action="DisplayName" class="list-group-item list-group-item-action px-1 py-2">
-                    1. Display Name
+            <div class="quick-link-list mb-4">
+                <a asp-controller="DisplayName" asp-action="DisplayName" class="quick-link-item">
+                    <span>1. Display Name</span>
+                    <span class="text-muted small">&rarr;</span>
                 </a>
-                <a asp-controller="AddNumbers" asp-action="AddNumbers" class="list-group-item list-group-item-action px-1 py-2">
-                    2. Add Numbers
+                <a asp-controller="AddNumbers" asp-action="AddNumbers" class="quick-link-item">
+                    <span>2. Add Numbers</span>
+                    <span class="text-muted small">&rarr;</span>
                 </a>
-                <a asp-controller="AgeCalculator" asp-action="AgeCalculator" class="list-group-item list-group-item-action px-1 py-2">
-                    3. Age Calculator
+                <a asp-controller="AgeCalculator" asp-action="AgeCalculator" class="quick-link-item">
+                    <span>3. Age Calculator</span>
+                    <span class="text-muted small">&rarr;</span>
                 </a>
-                <a asp-controller="GradeEval" asp-action="GradeEval" class="list-group-item list-group-item-action px-1 py-2">
-                    4. Grade Evaluator
+                <a asp-controller="GradeEval" asp-action="GradeEval" class="quick-link-item">
+                    <span>4. Grade Evaluator</span>
+                    <span class="text-muted small">&rarr;</span>
+                </a>
+                <a asp-controller="TemperatureConverter" asp-action="TemperatureConverter" class="quick-link-item">
+                    <span>5. Temperature Converter</span>
+                    <span class="text-muted small">&rarr;</span>
                 </a>
             </div>
-            <a asp-controller="BasicInputOutput" asp-action="BasicInputOutput" class="btn btn-accent btn-sm mt-auto">
-                Open Basic Input Output &rarr;
+            <a asp-controller="BasicInputOutput" asp-action="BasicInputOutput" class="btn btn-accent w-100 mt-auto">
+                Open Basic Input Output
             </a>
         </div>
     </div>
 
-    <div class="col-md-4">
-        <div class="app-card h-100 d-flex flex-column">
-            <div class="d-flex align-items-center gap-2 mb-2">
-                <span class="card-number">02</span>
-                <h5 class="fw-bold mb-0">Conditional Statement</h5>
-            </div>
+    <div class="col-lg-4">
+        <div class="app-card app-card-hover h-100 d-flex flex-column">
+            <h5 class="fw-bold mb-2">Conditional Statement</h5>
             <p class="text-muted small mb-3">
-                Decision-making programs using <code>if</code>, <code>else if</code>, <code>else</code>, and <code>switch</code> statements.
+                Programs that use <code>if</code>, <code>else if</code>, <code>else</code>, and <code>switch</code> statements to make decisions.
             </p>
-            <span class="text-muted small mt-auto">No activities added yet</span>
+            <div class="quick-link-list mb-4">
+                <a asp-controller="OddEven" asp-action="OddEven" class="quick-link-item">
+                    <span>1. Odd or Even</span>
+                    <span class="text-muted small">&rarr;</span>
+                </a>
+                <a asp-controller="SignChecker" asp-action="SignChecker" class="quick-link-item">
+                    <span>2. Sign Checker</span>
+                    <span class="text-muted small">&rarr;</span>
+                </a>
+                <a asp-controller="VotingEligibility" asp-action="VotingEligibility" class="quick-link-item">
+                    <span>3. Voting Eligibility</span>
+                    <span class="text-muted small">&rarr;</span>
+                </a>
+                <a asp-controller="LargestNumber" asp-action="LargestNumber" class="quick-link-item">
+                    <span>4. Largest Number</span>
+                    <span class="text-muted small">&rarr;</span>
+                </a>
+                <a asp-controller="DayName" asp-action="DayName" class="quick-link-item">
+                    <span>5. Day Name</span>
+                    <span class="text-muted small">&rarr;</span>
+                </a>
+            </div>
+            <a asp-controller="ConditionalStatement" asp-action="ConditionalStatement" class="btn btn-accent w-100 mt-auto">
+                Open Conditional Statement
+            </a>
         </div>
     </div>
 
-    <div class="col-md-4">
-        <div class="app-card h-100 d-flex flex-column">
-            <div class="d-flex align-items-center gap-2 mb-2">
-                <span class="card-number">03</span>
-                <h5 class="fw-bold mb-0">Repitition Statement</h5>
-            </div>
+    <div class="col-lg-4">
+        <div class="app-card app-card-hover h-100 d-flex flex-column">
+            <h5 class="fw-bold mb-2">Repitition Statement</h5>
             <p class="text-muted small mb-3">
-                Looping programs using <code>for</code>, <code>while</code>, and <code>do-while</code> statements.
+                Programs that use <code>for</code>, <code>while</code>, and <code>do-while</code> loops to repeat tasks.
             </p>
-            <span class="text-muted small mt-auto">No activities added yet</span>
+            <div class="quick-link-list mb-4">
+                <a asp-controller="MultiplicationTable" asp-action="MultiplicationTable" class="quick-link-item">
+                    <span>1. Multiplication Table</span>
+                    <span class="text-muted small">&rarr;</span>
+                </a>
+                <a asp-controller="SumOfNumbers" asp-action="SumOfNumbers" class="quick-link-item">
+                    <span>2. Sum of Numbers</span>
+                    <span class="text-muted small">&rarr;</span>
+                </a>
+                <a asp-controller="Countdown" asp-action="Countdown" class="quick-link-item">
+                    <span>3. Countdown</span>
+                    <span class="text-muted small">&rarr;</span>
+                </a>
+                <a asp-controller="VowelCounter" asp-action="VowelCounter" class="quick-link-item">
+                    <span>4. Vowel Counter</span>
+                    <span class="text-muted small">&rarr;</span>
+                </a>
+                <a asp-controller="TrianglePattern" asp-action="TrianglePattern" class="quick-link-item">
+                    <span>5. Triangle Pattern</span>
+                    <span class="text-muted small">&rarr;</span>
+                </a>
+            </div>
+            <a asp-controller="RepititionStatement" asp-action="RepititionStatement" class="btn btn-accent w-100 mt-auto">
+                Open Repitition Statement
+            </a>
         </div>
     </div>
 </div>

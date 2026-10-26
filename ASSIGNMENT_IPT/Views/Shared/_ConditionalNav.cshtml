@@ -1,0 +1,39 @@
+@{
+    var currentController = ViewContext.RouteData.Values["controller"]?.ToString() ?? "";
+}
+<li class="nav-item">
+    <a class="nav-link @(currentController == "ConditionalStatement" ? "active" : "")"
+       asp-area="" asp-controller="ConditionalStatement" asp-action="ConditionalStatement">
+        Conditional Statement
+    </a>
+</li>
+<li class="nav-item">
+    <a class="nav-link @(currentController == "OddEven" ? "active" : "")"
+       asp-area="" asp-controller="OddEven" asp-action="OddEven">
+        Odd or Even
+    </a>
+</li>
+<li class="nav-item">
+    <a class="nav-link @(currentController == "SignChecker" ? "active" : "")"
+       asp-area="" asp-controller="SignChecker" asp-action="SignChecker">
+        Sign Checker
+    </a>
+</li>
+<li class="nav-item">
+    <a class="nav-link @(currentController == "VotingEligibility" ? "active" : "")"
+       asp-area="" asp-controller="VotingEligibility" asp-action="VotingEligibility">
+        Voting Eligibility
+    </a>
+</li>
+<li class="nav-item">
+    <a class="nav-link @(currentController == "LargestNumber" ? "active" : "")"
+       asp-area="" asp-controller="LargestNumber" asp-action="LargestNumber">
+        Largest Number
+    </a>
+</li>
+<li class="nav-item">
+    <a class="nav-link @(currentController == "DayName" ? "active" : "")"
+       asp-area="" asp-controller="DayName" asp-action="DayName">
+        Day Name
+    </a>
+</li>

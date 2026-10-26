@@ -1,0 +1,72 @@
+@{
+    ViewData["Title"] = "Repitition Statement";
+}
+
+<div class="header-banner">
+    <h1 class="h3 fw-bold mb-2">Repitition Statement</h1>
+    <p class="mb-0">
+        These five examples use <code>for</code>, <code>while</code>, <code>do-while</code>, <code>foreach</code>, and nested <code>for</code> loops to repeat tasks. Click any example to try it out.
+    </p>
+</div>
+
+<div class="row g-4">
+    <div class="col-md-6">
+        <div class="app-card app-card-hover h-100 d-flex flex-column">
+            <h5 class="fw-bold mb-2">Multiplication Table</h5>
+            <p class="text-muted small mb-4">
+                Enter a number and see its multiplication table from 1 to 10. Uses a <code>for</code> loop.
+            </p>
+            <a asp-controller="MultiplicationTable" asp-action="MultiplicationTable" class="btn btn-accent mt-auto align-self-start">
+                Open Multiplication Table
+            </a>
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <div class="app-card app-card-hover h-100 d-flex flex-column">
+            <h5 class="fw-bold mb-2">Sum of Numbers</h5>
+            <p class="text-muted small mb-4">
+                Add all the numbers from 1 up to the number you enter. Uses a <code>while</code> loop.
+            </p>
+            <a asp-controller="SumOfNumbers" asp-action="SumOfNumbers" class="btn btn-accent mt-auto align-self-start">
+                Open Sum of Numbers
+            </a>
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <div class="app-card app-card-hover h-100 d-flex flex-column">
+            <h5 class="fw-bold mb-2">Countdown</h5>
+            <p class="text-muted small mb-4">
+                Count down from your number to 0. Uses a <code>do-while</code> loop.
+            </p>
+            <a asp-controller="Countdown" asp-action="Countdown" class="btn btn-accent mt-auto align-self-start">
+                Open Countdown
+            </a>
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <div class="app-card app-card-hover h-100 d-flex flex-column">
+            <h5 class="fw-bold mb-2">Vowel Counter</h5>
+            <p class="text-muted small mb-4">
+                Type a word or sentence and count its vowels and consonants. Uses a <code>foreach</code> loop.
+            </p>
+            <a asp-controller="VowelCounter" asp-action="VowelCounter" class="btn btn-accent mt-auto align-self-start">
+                Open Vowel Counter
+            </a>
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <div class="app-card app-card-hover h-100 d-flex flex-column">
+            <h5 class="fw-bold mb-2">Triangle Pattern</h5>
+            <p class="text-muted small mb-4">
+                Print a triangle made of stars with the number of rows you choose. Uses a nested <code>for</code> loop.
+            </p>
+            <a asp-controller="TrianglePattern" asp-action="TrianglePattern" class="btn btn-accent mt-auto align-self-start">
+                Open Triangle Pattern
+            </a>
+        </div>
+    </div>
+</div>

@@ -4,10 +4,13 @@ namespace ASSIGNMENT_IPT.Controllers
 {
     public class GradeEvalController : Controller
     {
+        // the view lives inside the Views/BasicInputOutput folder
+        private const string ViewPath = "~/Views/BasicInputOutput/GradeEval.cshtml";
+
         [HttpGet]
         public IActionResult GradeEval()
         {
-            return View();
+            return View(ViewPath);
         }
 
         [HttpPost]
@@ -18,13 +21,13 @@ namespace ASSIGNMENT_IPT.Controllers
             if (grade == null)
             {
                 ViewBag.Error = "Please enter a grade.";
-                return View();
+                return View(ViewPath);
             }
 
             if (grade < 0 || grade > 100)
             {
                 ViewBag.Error = "Grade must be between 0 and 100.";
-                return View();
+                return View(ViewPath);
             }
 
             string remarks;
@@ -51,7 +54,7 @@ namespace ASSIGNMENT_IPT.Controllers
             }
 
             ViewBag.Remarks = remarks;
-            return View();
+            return View(ViewPath);
         }
     }
 }

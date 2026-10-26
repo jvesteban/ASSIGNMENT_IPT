@@ -1,0 +1,39 @@
+@{
+    var currentController = ViewContext.RouteData.Values["controller"]?.ToString() ?? "";
+}
+<li class="nav-item">
+    <a class="nav-link @(currentController == "RepititionStatement" ? "active" : "")"
+       asp-area="" asp-controller="RepititionStatement" asp-action="RepititionStatement">
+        Repitition Statement
+    </a>
+</li>
+<li class="nav-item">
+    <a class="nav-link @(currentController == "MultiplicationTable" ? "active" : "")"
+       asp-area="" asp-controller="MultiplicationTable" asp-action="MultiplicationTable">
+        Multiplication Table
+    </a>
+</li>
+<li class="nav-item">
+    <a class="nav-link @(currentController == "SumOfNumbers" ? "active" : "")"
+       asp-area="" asp-controller="SumOfNumbers" asp-action="SumOfNumbers">
+        Sum of Numbers
+    </a>
+</li>
+<li class="nav-item">
+    <a class="nav-link @(currentController == "Countdown" ? "active" : "")"
+       asp-area="" asp-controller="Countdown" asp-action="Countdown">
+        Countdown
+    </a>
+</li>
+<li class="nav-item">
+    <a class="nav-link @(currentController == "VowelCounter" ? "active" : "")"
+       asp-area="" asp-controller="VowelCounter" asp-action="VowelCounter">
+        Vowel Counter
+    </a>
+</li>
+<li class="nav-item">
+    <a class="nav-link @(currentController == "TrianglePattern" ? "active" : "")"
+       asp-area="" asp-controller="TrianglePattern" asp-action="TrianglePattern">
+        Triangle Pattern
+    </a>
+</li>

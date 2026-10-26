@@ -1,6 +1,44 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
 @{
-    ViewData["Title"] = "AgeCalculator";
+    ViewData["Title"] = "Age Calculator";
 }
+
+<div class="row">
+    <div class="col-lg-6 mx-auto">
+        <a asp-controller="BasicInputOutput" asp-action="BasicInputOutput" class="btn-back">&larr; Back</a>
+
+        <div class="app-card">
+            <h3 class="h4 fw-bold mb-1">Age Calculator</h3>
+            <p class="text-muted small mb-0">Pick your birthdate below to find out your age today.</p>
+
+            <hr class="my-3 text-muted opacity-25" />
+
+            <form method="post">
+                <div class="mb-4">
+                    <label for="birthDate" class="form-label">Birthdate</label>
+                    <input type="date" id="birthDate" name="birthDate" class="form-control"
+                           max="@DateTime.Today.ToString("yyyy-MM-dd")" value="@ViewBag.BirthDate" autofocus />
+                </div>
+
+                <div class="d-flex gap-2">
+                    <button type="submit" class="btn btn-accent">Calculate Age</button>
+                    <a asp-action="AgeCalculator" class="btn-reset">Clear</a>
+                </div>
+            </form>
+
+            @if (ViewBag.Error != null)
+            {
+                <div class="alert alert-danger mt-3 mb-0">
+                    @ViewBag.Error
+                </div>
+            }
+
+            @if (ViewBag.Result != null)
+            {
+                <div class="output-card">
+                    <div class="output-label">Output</div>
+                    <div class="output-value">@ViewBag.Result</div>
+                </div>
+            }
+        </div>
+    </div>
+</div>

@@ -4,10 +4,13 @@ namespace ASSIGNMENT_IPT.Controllers
 {
     public class AddNumbersController : Controller
     {
+        // the view lives inside the Views/BasicInputOutput folder
+        private const string ViewPath = "~/Views/BasicInputOutput/AddNumbers.cshtml";
+
         [HttpGet]
         public IActionResult AddNumbers()
         {
-            return View();
+            return View(ViewPath);
         }
 
         [HttpPost]
@@ -19,12 +22,12 @@ namespace ASSIGNMENT_IPT.Controllers
             if (firstNumber == null || secondNumber == null)
             {
                 ViewBag.Error = "Please enter two valid numbers.";
-                return View();
+                return View(ViewPath);
             }
 
             double sum = firstNumber.Value + secondNumber.Value;
             ViewBag.Result = firstNumber + " + " + secondNumber + " = " + sum;
-            return View();
+            return View(ViewPath);
         }
     }
 }
