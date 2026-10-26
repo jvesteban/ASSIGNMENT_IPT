@@ -1,0 +1,124 @@
+@{
+    ViewData["Title"] = "Grade Evaluator";
+    string currentRemarks = ViewBag.Remarks as string ?? "";
+}
+
+@section navitems {
+    <partial name="_BasicIONav" />
+}
+
+<div class="page-header">
+    <div class="breadcrumb-custom">
+        <a asp-controller="BasicInputOutput" asp-action="BasicInputOutput">Basic Input Output</a>
+        <span>/</span>
+        <span>Grade Evaluator</span>
+    </div>
+    <div class="d-flex flex-wrap justify-content-between align-items-center gap-2">
+        <div>
+            <h1 class="h3 fw-bold mb-1">Grade Evaluator</h1>
+            <p class="text-muted mb-0">Enter a score from 0 to 100 to evaluate remarks and passing status.</p>
+        </div>
+        <span class="step-badge">Activity 04</span>
+    </div>
+</div>
+
+<div class="row g-4">
+    <div class="col-lg-6">
+        <div class="card topic-card h-100">
+            <div class="card-body p-4 d-flex flex-column">
+                <h2 class="h6 fw-bold text-uppercase text-muted mb-3">Grade Input</h2>
+
+                <form method="post">
+                    <div class="mb-4">
+                        <label for="grade" class="form-label">Student Grade (0 &ndash; 100)</label>
+                        <input type="number" step="any" min="0" max="100" id="grade" name="grade"
+                               class="form-control" placeholder="e.g. 88.5" value="@ViewBag.Grade" />
+                        <div class="form-text mt-2">
+                            Passing score is <strong>75</strong> and above.
+                        </div>
+                    </div>
+
+                    <div class="d-flex gap-2">
+                        <button type="submit" class="btn btn-primary">Evaluate Grade</button>
+                        <a asp-action="GradeEval" class="btn btn-light-bordered">Reset</a>
+                    </div>
+                </form>
+
+                @if (ViewBag.Error != null)
+                {
+                    <div class="error-banner mt-3">
+                        @ViewBag.Error
+                    </div>
+                }
+
+                <div class="mt-4 pt-3 border-top">
+                    <div class="small fw-bold text-uppercase text-muted mb-2">Grading Scale Reference</div>
+                    <div class="d-flex flex-column gap-1">
+                        <div class="grade-scale-row @(currentRemarks == "Excellent" ? "active-scale" : "")">
+                            <span>90 &ndash; 100</span>
+                            <span>Excellent</span>
+                        </div>
+                        <div class="grade-scale-row @(currentRemarks == "Very Good" ? "active-scale" : "")">
+                            <span>85 &ndash; 89</span>
+                            <span>Very Good</span>
+                        </div>
+                        <div class="grade-scale-row @(currentRemarks == "Good" ? "active-scale" : "")">
+                            <span>80 &ndash; 84</span>
+                            <span>Good</span>
+                        </div>
+                        <div class="grade-scale-row @(currentRemarks == "Passed" ? "active-scale" : "")">
+                            <span>75 &ndash; 79</span>
+                            <span>Passed</span>
+                        </div>
+                        <div class="grade-scale-row @(currentRemarks == "Failed" ? "active-scale" : "")">
+                            <span>Below 75</span>
+                            <span>Failed</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-6">
+        <div class="output-panel p-4">
+            <h2 class="h6 fw-bold text-uppercase text-muted mb-3">Evaluation Output</h2>
+
+            @if (ViewBag.Remarks != null)
+            {
+                bool passed = ViewBag.Passed == true;
+                <div class="@(passed ? "result-highlight" : "result-highlight-warning") mb-3">
+                    <div class="d-flex justify-content-between align-items-center mb-1">
+                        <span class="small text-uppercase fw-bold opacity-75">Remarks</span>
+                        <span class="badge @(passed ? "text-bg-success" : "text-bg-warning")">
+                            @(passed ? "PASSED" : "FAILED")
+                        </span>
+                    </div>
+                    <div class="display-6 fw-bold">@ViewBag.Remarks</div>
+                </div>
+
+                <div class="row g-3 mt-auto">
+                    <div class="col-sm-6">
+                        <div class="stat-tile">
+                            <div class="stat-tile-label">Numeric Grade</div>
+                            <div class="stat-tile-value">@ViewBag.Grade / 100</div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="stat-tile">
+                            <div class="stat-tile-label">Status</div>
+                            <div class="stat-tile-value">@(passed ? "Passed (>= 75)" : "Needs Improvement")</div>
+                        </div>
+                    </div>
+                </div>
+            }
+            else
+            {
+                <div class="output-empty my-auto">
+                    <div class="fw-semibold text-dark mb-1">No grade evaluated yet</div>
+                    <p class="small mb-0">Enter a score from 0 to 100 on the left and click <strong>Evaluate Grade</strong>.</p>
+                </div>
+            }
+        </div>
+    </div>
+</div>

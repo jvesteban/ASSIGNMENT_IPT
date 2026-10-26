@@ -1,0 +1,33 @@
+@{
+    var currentController = ViewContext.RouteData.Values["controller"]?.ToString() ?? "";
+}
+<li class="nav-item">
+    <a class="nav-link @(currentController == "BasicInputOutput" ? "active" : "")"
+       asp-area="" asp-controller="BasicInputOutput" asp-action="BasicInputOutput">
+        Basic Input Output
+    </a>
+</li>
+<li class="nav-item">
+    <a class="nav-link @(currentController == "DisplayName" ? "active" : "")"
+       asp-area="" asp-controller="DisplayName" asp-action="DisplayName">
+        Display Name
+    </a>
+</li>
+<li class="nav-item">
+    <a class="nav-link @(currentController == "AddNumbers" ? "active" : "")"
+       asp-area="" asp-controller="AddNumbers" asp-action="AddNumbers">
+        Add Numbers
+    </a>
+</li>
+<li class="nav-item">
+    <a class="nav-link @(currentController == "AgeCalculator" ? "active" : "")"
+       asp-area="" asp-controller="AgeCalculator" asp-action="AgeCalculator">
+        Age Calculator
+    </a>
+</li>
+<li class="nav-item">
+    <a class="nav-link @(currentController == "GradeEval" ? "active" : "")"
+       asp-area="" asp-controller="GradeEval" asp-action="GradeEval">
+        Grade Evaluator
+    </a>
+</li>

@@ -1,0 +1,93 @@
+@{
+    ViewData["Title"] = "Display Name";
+}
+
+@section navitems {
+    <partial name="_BasicIONav" />
+}
+
+<div class="page-header">
+    <div class="breadcrumb-custom">
+        <a asp-controller="BasicInputOutput" asp-action="BasicInputOutput">Basic Input Output</a>
+        <span>/</span>
+        <span>Display Name</span>
+    </div>
+    <div class="d-flex flex-wrap justify-content-between align-items-center gap-2">
+        <div>
+            <h1 class="h3 fw-bold mb-1">Display Name</h1>
+            <p class="text-muted mb-0">Enter your first and last name to generate a formatted greeting.</p>
+        </div>
+        <span class="step-badge">Activity 01</span>
+    </div>
+</div>
+
+<div class="row g-4">
+    <div class="col-lg-6">
+        <div class="card topic-card h-100">
+            <div class="card-body p-4">
+                <h2 class="h6 fw-bold text-uppercase text-muted mb-3">Input Form</h2>
+
+                <form method="post">
+                    <div class="mb-3">
+                        <label for="firstName" class="form-label">First Name</label>
+                        <input type="text" id="firstName" name="firstName" class="form-control"
+                               placeholder="e.g. Juan" value="@ViewBag.FirstName" autocomplete="given-name" />
+                    </div>
+                    <div class="mb-4">
+                        <label for="lastName" class="form-label">Last Name</label>
+                        <input type="text" id="lastName" name="lastName" class="form-control"
+                               placeholder="e.g. Dela Cruz" value="@ViewBag.LastName" autocomplete="family-name" />
+                    </div>
+
+                    <div class="d-flex gap-2">
+                        <button type="submit" class="btn btn-primary">Display Name</button>
+                        <a asp-action="DisplayName" class="btn btn-light-bordered">Reset</a>
+                    </div>
+                </form>
+
+                @if (ViewBag.Error != null)
+                {
+                    <div class="error-banner mt-3">
+                        @ViewBag.Error
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-6">
+        <div class="output-panel p-4">
+            <h2 class="h6 fw-bold text-uppercase text-muted mb-3">Output Result</h2>
+
+            @if (ViewBag.Result != null)
+            {
+                <div class="result-highlight mb-3">
+                    <div class="small text-uppercase fw-bold mb-1 opacity-75">Greeting Message</div>
+                    <div class="fs-5 fw-bold">@ViewBag.Result</div>
+                </div>
+
+                <div class="row g-3 mt-auto">
+                    <div class="col-sm-6">
+                        <div class="stat-tile">
+                            <div class="stat-tile-label">Full Name</div>
+                            <div class="stat-tile-value">@ViewBag.FullName</div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="stat-tile">
+                            <div class="stat-tile-label">Character Length</div>
+                            <div class="stat-tile-value">@(((string)ViewBag.FullName).Length) chars</div>
+                        </div>
+                    </div>
+                </div>
+            }
+            else
+            {
+                <div class="output-empty my-auto">
+                    <div class="fw-semibold text-dark mb-1">No output to display yet</div>
+                    <p class="small mb-0">Fill in your first and last name on the left, then click <strong>Display Name</strong>.</p>
+                </div>
+            }
+        </div>
+    </div>
+</div>
