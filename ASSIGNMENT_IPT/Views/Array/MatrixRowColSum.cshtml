@@ -1,8 +1,8 @@
 @{
     ViewData["Title"] = "Matrix Row & Col Sum";
-    int[,] matrix = ViewBag.Matrix as int[,];
-    int[] rowSums = ViewBag.RowSums as int[];
-    int[] colSums = ViewBag.ColSums as int[];
+    int[,]? matrix = ViewBag.Matrix as int[,];
+    int[]? rowSums = ViewBag.RowSums as int[];
+    int[]? colSums = ViewBag.ColSums as int[];
     int grandTotal = ViewBag.GrandTotal != null ? (int)ViewBag.GrandTotal : 0;
 }
 

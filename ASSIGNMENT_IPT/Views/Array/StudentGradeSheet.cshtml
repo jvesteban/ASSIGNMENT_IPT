@@ -1,9 +1,9 @@
 @{
     ViewData["Title"] = "Student Grade Sheet";
-    string[] students = ViewBag.Students as string[];
-    string[] subjects = ViewBag.Subjects as string[];
-    int[,] grades = ViewBag.Grades as int[,];
-    double[] averages = ViewBag.Averages as double[];
+    string[]? students = ViewBag.Students as string[];
+    string[]? subjects = ViewBag.Subjects as string[];
+    int[,]? grades = ViewBag.Grades as int[,];
+    double[]? averages = ViewBag.Averages as double[];
     double classAverage = ViewBag.ClassAverage != null ? (double)ViewBag.ClassAverage : 0;
 }
 

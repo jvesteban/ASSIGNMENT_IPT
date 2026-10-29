@@ -1,6 +1,6 @@
 @{
     ViewData["Title"] = "Matrix Display";
-    int[,] matrix = ViewBag.Matrix as int[,];
+    int[,]? matrix = ViewBag.Matrix as int[,];
     int? selRow = ViewBag.TargetRow as int?;
     int? selCol = ViewBag.TargetCol as int?;
 }

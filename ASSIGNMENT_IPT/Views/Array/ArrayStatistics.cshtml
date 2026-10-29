@@ -1,6 +1,6 @@
 @{
     ViewData["Title"] = "Array Statistics";
-    var items = ViewBag.Items as List<string>;
+    var items = ViewBag.Items as List<string> ?? new List<string>();
 }
 
 <div class="row">
@@ -50,11 +50,11 @@
                 </div>
             }
 
-            @if (ViewBag.HasResult == true && items != null)
+            @if (ViewBag.HasResult == true && items.Count > 0)
             {
                 <div class="output-card mt-3">
                     <div class="output-label">1D Array Elements</div>
-                    <pre class="loop-output mb-3">@string.Join("\n", items)</pre>
+                    <pre class="loop-output mb-3">@string.Join("\n", items.Cast<string>())</pre>
 
                     <div class="row g-2 pt-2 border-top">
                         <div class="col-6 col-sm-3">
