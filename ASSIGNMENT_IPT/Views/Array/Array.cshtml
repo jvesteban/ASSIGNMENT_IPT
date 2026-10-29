@@ -1,0 +1,78 @@
+@{
+    ViewData["Title"] = "Array";
+}
+
+<div class="header-banner">
+    <h1 class="h3 fw-bold mb-2">Array Operations</h1>
+    <p class="mb-0">
+        This module demonstrates array data structures in C#: 2 examples of One-Dimensional (1D) Arrays and 3 examples of Two-Dimensional (2D) Arrays.
+    </p>
+</div>
+
+<!-- Section 1: One-Dimensional Arrays (2 examples) -->
+<h4 class="fw-bold mb-3 text-secondary">One-Dimensional (1D) Arrays</h4>
+<div class="row g-4 mb-5">
+    <div class="col-md-6">
+        <div class="app-card app-card-hover h-100 d-flex flex-column">
+            <h5 class="fw-bold mb-2">Array Statistics</h5>
+            <p class="text-muted small mb-4">
+                Input 5 numbers into a 1D array (<code>int[]</code>). The program displays each element by index and computes the sum, average, min, and max.
+            </p>
+            <a asp-controller="ArrayStatistics" asp-action="ArrayStatistics" class="btn btn-accent mt-auto align-self-start">
+                Open Array Statistics
+            </a>
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <div class="app-card app-card-hover h-100 d-flex flex-column">
+            <h5 class="fw-bold mb-2">Array Search</h5>
+            <p class="text-muted small mb-4">
+                Perform a linear search on a 1D array of names (<code>string[]</code>) to find whether an item exists and retrieve its index position.
+            </p>
+            <a asp-controller="ArraySearch" asp-action="ArraySearch" class="btn btn-accent mt-auto align-self-start">
+                Open Array Search
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- Section 2: Two-Dimensional Arrays (3 examples) -->
+<h4 class="fw-bold mb-3 text-secondary">Two-Dimensional (2D) Arrays</h4>
+<div class="row g-4">
+    <div class="col-md-4">
+        <div class="app-card app-card-hover h-100 d-flex flex-column">
+            <h5 class="fw-bold mb-2">Matrix Display</h5>
+            <p class="text-muted small mb-4">
+                View a 3&times;3 matrix (<code>int[,]</code>) in a table grid and look up individual elements by their row and column coordinates.
+            </p>
+            <a asp-controller="MatrixDisplay" asp-action="MatrixDisplay" class="btn btn-accent mt-auto align-self-start">
+                Open Matrix Display
+            </a>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="app-card app-card-hover h-100 d-flex flex-column">
+            <h5 class="fw-bold mb-2">Matrix Row &amp; Column Sum</h5>
+            <p class="text-muted small mb-4">
+                Populate a 3&times;3 2D array and compute the sum of each individual row and column using nested loops.
+            </p>
+            <a asp-controller="MatrixRowColSum" asp-action="MatrixRowColSum" class="btn btn-accent mt-auto align-self-start">
+                Open Row &amp; Col Sum
+            </a>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="app-card app-card-hover h-100 d-flex flex-column">
+            <h5 class="fw-bold mb-2">Student Grade Sheet</h5>
+            <p class="text-muted small mb-4">
+                Store student scores across multiple subjects in a 3&times;3 2D array and calculate each student's average grade.
+            </p>
+            <a asp-controller="StudentGradeSheet" asp-action="StudentGradeSheet" class="btn btn-accent mt-auto align-self-start">
+                Open Grade Sheet
+            </a>
+        </div>
+    </div>
+</div>

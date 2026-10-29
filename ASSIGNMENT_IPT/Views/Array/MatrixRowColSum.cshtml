@@ -1,0 +1,86 @@
+@{
+    ViewData["Title"] = "Matrix Row & Col Sum";
+    int[,] matrix = ViewBag.Matrix as int[,];
+    int[] rowSums = ViewBag.RowSums as int[];
+    int[] colSums = ViewBag.ColSums as int[];
+    int grandTotal = ViewBag.GrandTotal != null ? (int)ViewBag.GrandTotal : 0;
+}
+
+<div class="row">
+    <div class="col-lg-7 mx-auto">
+        <a asp-controller="Array" asp-action="Array" class="btn-back">&larr; Back</a>
+
+        <div class="app-card">
+            <h3 class="h4 fw-bold mb-1">Matrix Row &amp; Column Sum (2D Array)</h3>
+            <p class="text-muted small mb-0">Enter values into a 3&times;3 2D array (<code>int[,]</code>) to compute the sum of each row and column using nested loops.</p>
+
+            <hr class="my-3 text-muted opacity-25" />
+
+            <form method="post">
+                <div class="table-responsive mb-3">
+                    <table class="table table-bordered text-center align-middle mb-0">
+                        <thead class="table-light">
+                            <tr>
+                                <th></th>
+                                <th>Col 0</th>
+                                <th>Col 1</th>
+                                <th>Col 2</th>
+                                <th class="table-info">Row Total</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @for (int r = 0; r < 3; r++)
+                            {
+                                <tr>
+                                    <th class="table-light">Row @r</th>
+                                    @for (int c = 0; c < 3; c++)
+                                    {
+                                        int val = (matrix != null) ? matrix[r, c] : 0;
+                                        <td>
+                                            <input type="number" name="r@(r)c@(c)" class="form-control text-center p-1"
+                                                   value="@val" style="min-width: 60px;" />
+                                        </td>
+                                    }
+                                    <td class="table-info fw-bold">
+                                        @((rowSums != null) ? rowSums[r] : 0)
+                                    </td>
+                                </tr>
+                            }
+                            <!-- Column Totals row -->
+                            <tr class="table-info fw-bold">
+                                <th>Col Total</th>
+                                @for (int c = 0; c < 3; c++)
+                                {
+                                    <td>@((colSums != null) ? colSums[c] : 0)</td>
+                                }
+                                <td class="table-primary">Total: @grandTotal</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="d-flex gap-2">
+                    <button type="submit" class="btn btn-accent">Calculate Sums</button>
+                    <a asp-action="MatrixRowColSum" class="btn-reset">Reset</a>
+                </div>
+            </form>
+
+            @if (ViewBag.Error != null)
+            {
+                <div class="alert alert-danger mt-3 mb-0">
+                    @ViewBag.Error
+                </div>
+            }
+
+            @if (ViewBag.HasCalculated == true)
+            {
+                <div class="output-card mt-3">
+                    <div class="output-label">Summary of 2D Array Sums</div>
+                    <div class="small">
+                        <strong>Grand Total of All 9 Elements:</strong> @grandTotal
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>

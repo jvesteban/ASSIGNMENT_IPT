@@ -1,0 +1,59 @@
+@{
+    ViewData["Title"] = "Array Search";
+    var names = ViewBag.ArrayData as string[];
+}
+
+<div class="row">
+    <div class="col-lg-6 mx-auto">
+        <a asp-controller="Array" asp-action="Array" class="btn-back">&larr; Back</a>
+
+        <div class="app-card">
+            <h3 class="h4 fw-bold mb-1">Array Search (1D Array)</h3>
+            <p class="text-muted small mb-0">Search for a name within a 1D string array (<code>string[]</code>) using linear search.</p>
+
+            <hr class="my-3 text-muted opacity-25" />
+
+            <div class="mb-3">
+                <label class="form-label small text-muted">Current 1D Array Contents:</label>
+                <div class="p-2 bg-light border rounded small">
+                    @if (names != null)
+                    {
+                        for (int i = 0; i < names.Length; i++)
+                        {
+                            <span class="badge text-bg-secondary me-1">[@i] @names[i]</span>
+                        }
+                    }
+                </div>
+            </div>
+
+            <form method="post">
+                <div class="mb-3">
+                    <label for="keyword" class="form-label">Search Name</label>
+                    <input type="text" id="keyword" name="keyword" class="form-control"
+                           placeholder="e.g. Maria" value="@ViewBag.Keyword" autofocus />
+                </div>
+
+                <div class="d-flex gap-2">
+                    <button type="submit" class="btn btn-accent">Search in 1D Array</button>
+                    <a asp-action="ArraySearch" class="btn-reset">Clear</a>
+                </div>
+            </form>
+
+            @if (ViewBag.Error != null)
+            {
+                <div class="alert alert-danger mt-3 mb-0">
+                    @ViewBag.Error
+                </div>
+            }
+
+            @if (ViewBag.Result != null)
+            {
+                bool isFound = ViewBag.Found == true;
+                <div class="output-card @(isFound ? "" : "output-card-danger") mt-3">
+                    <div class="output-label">Search Result</div>
+                    <div class="output-value">@ViewBag.Result</div>
+                </div>
+            }
+        </div>
+    </div>
+</div>

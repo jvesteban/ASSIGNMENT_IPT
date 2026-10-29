@@ -2,7 +2,8 @@
     var currentController = ViewContext.RouteData.Values["controller"]?.ToString() ?? "";
     bool isBasicIO = currentController is "BasicInputOutput" or "DisplayName" or "AddNumbers" or "AgeCalculator" or "GradeEval" or "TemperatureConverter";
     bool isConditional = currentController is "ConditionalStatement" or "OddEven" or "SignChecker" or "VotingEligibility" or "LargestNumber" or "DayName";
-    bool isRepitition = currentController is "RepititionStatement" or "MultiplicationTable" or "SumOfNumbers" or "Countdown" or "VowelCounter" or "TrianglePattern";
+    bool isRepitition = currentController is "RepititionStatement" or "MultiplicationTable" or "SumOfNumbers" or "EvenNumbers" or "Countdown" or "Fibonacci";
+    bool isArray = currentController is "Array" or "ArrayStatistics" or "ArraySearch" or "MatrixDisplay" or "MatrixRowColSum" or "StudentGradeSheet";
 }
 <!DOCTYPE html>
 <html lang="en">
@@ -47,6 +48,12 @@
                             <a class="nav-link @(isRepitition ? "active" : "")"
                                asp-area="" asp-controller="RepititionStatement" asp-action="RepititionStatement">
                                 Repitition Statement
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link @(isArray ? "active" : "")"
+                               asp-area="" asp-controller="Array" asp-action="Array">
+                                Array
                             </a>
                         </li>
                     </ul>

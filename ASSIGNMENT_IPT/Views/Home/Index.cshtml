@@ -10,7 +10,8 @@
 </div>
 
 <div class="row g-4">
-    <div class="col-lg-4">
+    <!-- Module 1: Basic Input Output -->
+    <div class="col-md-6 col-xl-3">
         <div class="app-card app-card-hover h-100 d-flex flex-column">
             <h5 class="fw-bold mb-2">Basic Input Output</h5>
             <p class="text-muted small mb-3">
@@ -44,7 +45,8 @@
         </div>
     </div>
 
-    <div class="col-lg-4">
+    <!-- Module 2: Conditional Statement -->
+    <div class="col-md-6 col-xl-3">
         <div class="app-card app-card-hover h-100 d-flex flex-column">
             <h5 class="fw-bold mb-2">Conditional Statement</h5>
             <p class="text-muted small mb-3">
@@ -78,7 +80,8 @@
         </div>
     </div>
 
-    <div class="col-lg-4">
+    <!-- Module 3: Repitition Statement -->
+    <div class="col-md-6 col-xl-3">
         <div class="app-card app-card-hover h-100 d-flex flex-column">
             <h5 class="fw-bold mb-2">Repitition Statement</h5>
             <p class="text-muted small mb-3">
@@ -93,21 +96,56 @@
                     <span>2. Sum of Numbers</span>
                     <span class="text-muted small">&rarr;</span>
                 </a>
+                <a asp-controller="EvenNumbers" asp-action="EvenNumbers" class="quick-link-item">
+                    <span>3. Even Numbers</span>
+                    <span class="text-muted small">&rarr;</span>
+                </a>
                 <a asp-controller="Countdown" asp-action="Countdown" class="quick-link-item">
-                    <span>3. Countdown</span>
+                    <span>4. Countdown</span>
                     <span class="text-muted small">&rarr;</span>
                 </a>
-                <a asp-controller="VowelCounter" asp-action="VowelCounter" class="quick-link-item">
-                    <span>4. Vowel Counter</span>
-                    <span class="text-muted small">&rarr;</span>
-                </a>
-                <a asp-controller="TrianglePattern" asp-action="TrianglePattern" class="quick-link-item">
-                    <span>5. Triangle Pattern</span>
+                <a asp-controller="Fibonacci" asp-action="Fibonacci" class="quick-link-item">
+                    <span>5. Fibonacci Sequence</span>
                     <span class="text-muted small">&rarr;</span>
                 </a>
             </div>
             <a asp-controller="RepititionStatement" asp-action="RepititionStatement" class="btn btn-accent w-100 mt-auto">
                 Open Repitition Statement
+            </a>
+        </div>
+    </div>
+
+    <!-- Module 4: Array Operations -->
+    <div class="col-md-6 col-xl-3">
+        <div class="app-card app-card-hover h-100 d-flex flex-column">
+            <h5 class="fw-bold mb-2">Array</h5>
+            <p class="text-muted small mb-3">
+                Programs that demonstrate One-Dimensional (1D) and Two-Dimensional (2D) array operations in C#.
+            </p>
+            <div class="quick-link-list mb-4">
+                <a asp-controller="ArrayStatistics" asp-action="ArrayStatistics" class="quick-link-item">
+                    <span>1. Array Stats (1D)</span>
+                    <span class="text-muted small">&rarr;</span>
+                </a>
+                <a asp-controller="ArraySearch" asp-action="ArraySearch" class="quick-link-item">
+                    <span>2. Array Search (1D)</span>
+                    <span class="text-muted small">&rarr;</span>
+                </a>
+                <a asp-controller="MatrixDisplay" asp-action="MatrixDisplay" class="quick-link-item">
+                    <span>3. Matrix Display (2D)</span>
+                    <span class="text-muted small">&rarr;</span>
+                </a>
+                <a asp-controller="MatrixRowColSum" asp-action="MatrixRowColSum" class="quick-link-item">
+                    <span>4. Row &amp; Col Sum (2D)</span>
+                    <span class="text-muted small">&rarr;</span>
+                </a>
+                <a asp-controller="StudentGradeSheet" asp-action="StudentGradeSheet" class="quick-link-item">
+                    <span>5. Grade Sheet (2D)</span>
+                    <span class="text-muted small">&rarr;</span>
+                </a>
+            </div>
+            <a asp-controller="Array" asp-action="Array" class="btn btn-accent w-100 mt-auto">
+                Open Array
             </a>
         </div>
     </div>

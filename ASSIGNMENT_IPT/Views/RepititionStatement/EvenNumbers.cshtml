@@ -1,0 +1,45 @@
+@{
+    ViewData["Title"] = "Even Numbers";
+    var lines = ViewBag.Lines as List<string>;
+}
+
+<div class="row">
+    <div class="col-lg-6 mx-auto">
+        <a asp-controller="RepititionStatement" asp-action="RepititionStatement" class="btn-back">&larr; Back</a>
+
+        <div class="app-card">
+            <h3 class="h4 fw-bold mb-1">Even Numbers</h3>
+            <p class="text-muted small mb-0">Enter a number and the program will list all even numbers up to that limit using a <code>while</code> loop.</p>
+
+            <hr class="my-3 text-muted opacity-25" />
+
+            <form method="post">
+                <div class="mb-4">
+                    <label for="limit" class="form-label">Limit Number (2 - 100)</label>
+                    <input type="number" step="1" min="2" max="100" id="limit" name="limit" class="form-control"
+                           placeholder="e.g. 20" value="@ViewBag.Limit" autofocus />
+                </div>
+
+                <div class="d-flex gap-2">
+                    <button type="submit" class="btn btn-accent">Generate Even Numbers</button>
+                    <a asp-action="EvenNumbers" class="btn-reset">Clear</a>
+                </div>
+            </form>
+
+            @if (ViewBag.Error != null)
+            {
+                <div class="alert alert-danger mt-3 mb-0">
+                    @ViewBag.Error
+                </div>
+            }
+
+            @if (lines != null)
+            {
+                <div class="output-card">
+                    <div class="output-label">@ViewBag.Title2 &mdash; Total: @ViewBag.Count numbers</div>
+                    <pre class="loop-output">@string.Join(", ", lines)</pre>
+                </div>
+            }
+        </div>
+    </div>
+</div>

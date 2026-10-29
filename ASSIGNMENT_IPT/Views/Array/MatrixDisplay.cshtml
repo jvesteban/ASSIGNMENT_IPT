@@ -1,0 +1,89 @@
+@{
+    ViewData["Title"] = "Matrix Display";
+    int[,] matrix = ViewBag.Matrix as int[,];
+    int? selRow = ViewBag.TargetRow as int?;
+    int? selCol = ViewBag.TargetCol as int?;
+}
+
+<div class="row">
+    <div class="col-lg-6 mx-auto">
+        <a asp-controller="Array" asp-action="Array" class="btn-back">&larr; Back</a>
+
+        <div class="app-card">
+            <h3 class="h4 fw-bold mb-1">Matrix Display (2D Array)</h3>
+            <p class="text-muted small mb-0">Inspect a 3&times;3 2D array (<code>int[,]</code>) and look up element values by their <code>[row, column]</code> indices.</p>
+
+            <hr class="my-3 text-muted opacity-25" />
+
+            <div class="mb-4">
+                <label class="form-label small text-muted">3&times;3 2D Array Matrix Grid:</label>
+                <div class="table-responsive">
+                    <table class="table table-bordered text-center align-middle mb-0">
+                        <thead class="table-light">
+                            <tr>
+                                <th></th>
+                                <th>Col 0</th>
+                                <th>Col 1</th>
+                                <th>Col 2</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @if (matrix != null)
+                            {
+                                for (int r = 0; r < 3; r++)
+                                {
+                                    <tr>
+                                        <th class="table-light">Row @r</th>
+                                        @for (int c = 0; c < 3; c++)
+                                        {
+                                            bool isTarget = (selRow == r && selCol == c);
+                                            <td class="@(isTarget ? "table-primary fw-bold" : "")">
+                                                @matrix[r, c]
+                                                <div class="text-muted small" style="font-size: 0.7rem;">[@r,@c]</div>
+                                            </td>
+                                        }
+                                    </tr>
+                                }
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <form method="post">
+                <div class="row g-2 mb-3">
+                    <div class="col-sm-6">
+                        <label for="targetRow" class="form-label">Row Index (0 - 2)</label>
+                        <input type="number" min="0" max="2" id="targetRow" name="targetRow" class="form-control"
+                               placeholder="e.g. 1" value="@ViewBag.TargetRow" autofocus />
+                    </div>
+                    <div class="col-sm-6">
+                        <label for="targetCol" class="form-label">Column Index (0 - 2)</label>
+                        <input type="number" min="0" max="2" id="targetCol" name="targetCol" class="form-control"
+                               placeholder="e.g. 2" value="@ViewBag.TargetCol" />
+                    </div>
+                </div>
+
+                <div class="d-flex gap-2">
+                    <button type="submit" class="btn btn-accent">Get 2D Element</button>
+                    <a asp-action="MatrixDisplay" class="btn-reset">Reset</a>
+                </div>
+            </form>
+
+            @if (ViewBag.Error != null)
+            {
+                <div class="alert alert-danger mt-3 mb-0">
+                    @ViewBag.Error
+                </div>
+            }
+
+            @if (ViewBag.HasResult == true)
+            {
+                <div class="output-card mt-3">
+                    <div class="output-label">Coordinate Result</div>
+                    <div class="output-value">@ViewBag.Result</div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
